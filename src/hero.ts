@@ -7,11 +7,11 @@ export class Hero {
 		}
 	}
 	get id() { return this._id; }
-	get isNullo() { return this._id === 0; }
+	// get isNullo() { return this._id === 0; }
 	get name() { return this._name; }
 	set name(value:string) { this._name = value; }
 
-	static get nullo() { return nullo; }
+	// static get nullo() { return nullo; }
 }
 
-var nullo = new Hero('Noman', 0);
+// var nullo = new Hero('Noman', 0);

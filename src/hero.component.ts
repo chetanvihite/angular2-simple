@@ -1,4 +1,4 @@
-import {Component, Inject, NgFor, View } from 'angular2/angular2';
+import {Component, Inject, NgFor, NgIf, View } from 'angular2/angular2';
 import {Backend} from 'backend';
 import {Hero} from 'hero';
 import {HeroDataService} from 'hero.dataservice';
@@ -11,16 +11,16 @@ const initialHeroName = 'Igor';
 })
 @View({
     templateUrl: 'hero.html',
-    directives: [NgFor],
+    directives: [NgFor, NgIf],
     styles: ['.heroes {list-style-type: none; margin-left: 1em; padding: 0}']
 })
 export class HeroComponent {
-    private _currentHero = Hero.nullo;
+    private _currentHero: Hero; // = Hero.nullo;
 
     constructor(private _heroDataService: HeroDataService) { }
 
     get currentHero() {
-        if (this._currentHero.isNullo) {
+        if (!this._currentHero) {
             this._currentHero = this._heroDataService.getOrCreateHero(initialHeroName);
         }
         return this._currentHero;

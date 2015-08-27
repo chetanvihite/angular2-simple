@@ -71,7 +71,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
                 };
                 HeroDataService.prototype.getOrCreateHero = function (name) {
                     var _this = this;
-                    var hero = hero_1.Hero.nullo;
+                    var hero; // = Hero.nullo;
                     if (this._heroes.fetched) {
                         hero = this._getOrCreateHeroFromCache(name);
                     }
@@ -83,9 +83,9 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
                     return hero;
                 };
                 HeroDataService.prototype._getOrCreateHeroFromCache = function (name) {
-                    if (!name) {
-                        return hero_1.Hero.nullo;
-                    }
+                    // if (!name) {
+                    //     return Hero.nullo;
+                    // }
                     var matches = this._heroes.filter(function (hero) {
                         return hero.name === name;
                     });

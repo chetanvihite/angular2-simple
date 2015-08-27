@@ -4,10 +4,12 @@
         <li *ng-for="#h of heroes" (click)="onHeroSelected(h)">({{h.id}}) {{h.name}}</li>
     </ul>
     <hr/>
-    <h2>{{currentHero.name}} is my current hero!</h2>
-    <ul>
-        <li>id: {{currentHero.id}}</li>
-        <li>name: {{currentHero.name}}</li>
-        <li>isNullo: {{currentHero.isNullo}}</li>
-    </ul>
+    <div *ng-if="!!currentHero">
+        <h2>{{currentHero.name}} is my current hero!</h2>
+        <ul>
+            <li>id: {{currentHero.id}}</li>
+            <li>name: {{currentHero.name}}</li>
+            <!--<li>isNullo: {{currentHero.isNullo}}</li>-->
+        </ul>
+    </div>
 </div>

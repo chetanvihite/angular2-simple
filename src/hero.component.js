@@ -8,16 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};System.register(['angular2/angular2', 'hero', 'hero.dataservice'], function(exports_1) {
-    var angular2_1, hero_1, hero_dataservice_1;
+};System.register(['angular2/angular2', 'hero.dataservice'], function(exports_1) {
+    var angular2_1, hero_dataservice_1;
     var initialHeroName, HeroComponent;
     return {
         setters:[
             function (_angular2_1) {
                 angular2_1 = _angular2_1;
-            },
-            function (_hero_1) {
-                hero_1 = _hero_1;
             },
             function (_hero_dataservice_1) {
                 hero_dataservice_1 = _hero_dataservice_1;
@@ -27,11 +24,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
             HeroComponent = (function () {
                 function HeroComponent(_heroDataService) {
                     this._heroDataService = _heroDataService;
-                    this._currentHero = hero_1.Hero.nullo;
                 }
                 Object.defineProperty(HeroComponent.prototype, "currentHero", {
                     get: function () {
-                        if (this._currentHero.isNullo) {
+                        if (!this._currentHero) {
                             this._currentHero = this._heroDataService.getOrCreateHero(initialHeroName);
                         }
                         return this._currentHero;
@@ -59,7 +55,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
                     }),
                     angular2_1.View({
                         templateUrl: 'hero.html',
-                        directives: [angular2_1.NgFor],
+                        directives: [angular2_1.NgFor, angular2_1.NgIf],
                         styles: ['.heroes {list-style-type: none; margin-left: 1em; padding: 0}']
                     }), 
                     __metadata('design:paramtypes', [hero_dataservice_1.HeroDataService])
