@@ -20,7 +20,7 @@ export class HeroComponent {
 
     get currentHero() {
         if (!this._currentHero) {
-            this._currentHero = this._heroDataService.getOrCreateHero(initialHeroName);
+            this._currentHero = this._heroDataService.getHero(initialHeroName);
         }
         return this._currentHero;
     }

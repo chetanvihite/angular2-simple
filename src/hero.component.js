@@ -28,7 +28,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
                 Object.defineProperty(HeroComponent.prototype, "currentHero", {
                     get: function () {
                         if (!this._currentHero) {
-                            this._currentHero = this._heroDataService.getOrCreateHero(initialHeroName);
+                            this._currentHero = this._heroDataService.getHero(initialHeroName);
                         }
                         return this._currentHero;
                     },

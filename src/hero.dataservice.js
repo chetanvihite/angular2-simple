@@ -69,7 +69,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
                     });
                     return this._heroes;
                 };
-                HeroDataService.prototype.getOrCreateHero = function (name) {
+                HeroDataService.prototype.getHero = function (name) {
                     var _this = this;
                     var hero;
                     if (this._heroes.fetched) {

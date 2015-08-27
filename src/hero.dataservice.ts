@@ -51,7 +51,7 @@ export class HeroDataService {
         return this._heroes;
     }
 
-    getOrCreateHero(name?: string) {
+    getHero(name?: string) {
         let hero: Hero;
 
         if (this._heroes.fetched) {
