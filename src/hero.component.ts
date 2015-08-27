@@ -14,7 +14,7 @@ const initialHeroName = 'Igor';
     styles: ['.heroes {list-style-type: none; margin-left: 1em; padding: 0}']
 })
 export class HeroComponent {
-    private _currentHero: Hero; // = Hero.nullo;
+    private _currentHero: Hero;
 
     constructor(private _heroDataService: HeroDataService) { }
 
