@@ -55,11 +55,11 @@ export class HeroDataService {
         let hero: Hero;
 
         if (this._heroes.fetched) {
-            hero = this._getOrCreateHeroFromCache(name);
+            hero = this.getHeroFromCache(name);
         } else if (!this._heroes.fetching) {
             this.getAllHeroes();
             this._heroes.ready
-                .then(_ => hero = this._getOrCreateHeroFromCache(name))
+                .then(_ => hero = this.getHeroFromCache(name))
         }
         return hero;
     }
@@ -67,7 +67,7 @@ export class HeroDataService {
     ///////////////////
     protected _heroes = <Heroes>[];
 
-    protected _getOrCreateHeroFromCache(name?: string) {
+    protected getHeroFromCache(name?: string) {
         let matches = this._heroes.filter(hero => {
             return hero.name === name;
         });

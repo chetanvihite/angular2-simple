@@ -73,16 +73,16 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
                     var _this = this;
                     var hero;
                     if (this._heroes.fetched) {
-                        hero = this._getOrCreateHeroFromCache(name);
+                        hero = this.getHeroFromCache(name);
                     }
                     else if (!this._heroes.fetching) {
                         this.getAllHeroes();
                         this._heroes.ready
-                            .then(function (_) { return hero = _this._getOrCreateHeroFromCache(name); });
+                            .then(function (_) { return hero = _this.getHeroFromCache(name); });
                     }
                     return hero;
                 };
-                HeroDataService.prototype._getOrCreateHeroFromCache = function (name) {
+                HeroDataService.prototype.getHeroFromCache = function (name) {
                     var matches = this._heroes.filter(function (hero) {
                         return hero.name === name;
                     });
