@@ -15,8 +15,6 @@ System.register(['angular2/angular2', 'backend', 'hero.component', 'hero.dataser
                 hero_dataservice_1 = _hero_dataservice_1;
             }],
         execute: function() {
-            // bootstrap(AppComponent); // works if using component DI registration
-            // global DI registration
             angular2_1.bootstrap(hero_component_1.HeroComponent, [hero_dataservice_1.HeroDataService, backend_1.Backend]);
         }
     }

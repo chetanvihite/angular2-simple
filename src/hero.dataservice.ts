@@ -25,7 +25,7 @@ export class HeroDataService {
 
         // // if getAll in progress or completed (indicated by existence of promise)
         if (this._heroes.ready) {
-            return this._heroes; //.ready
+            return this._heroes;
         }
 
         // clear heroes and initiate new fetch, returning its promise
@@ -48,11 +48,11 @@ export class HeroDataService {
                 console.log(`getAllHeroes failed w/ message:"${err}"`);
                 return Promise.reject(err);
             });
-        return this._heroes; //.ready;
+        return this._heroes;
     }
 
     getOrCreateHero(name?: string) {
-        let hero: Hero; // = Hero.nullo;
+        let hero: Hero;
 
         if (this._heroes.fetched) {
             hero = this._getOrCreateHeroFromCache(name);
@@ -68,10 +68,6 @@ export class HeroDataService {
     protected _heroes = <Heroes>[];
 
     protected _getOrCreateHeroFromCache(name?: string) {
-        // if (!name) {
-        //     return Hero.nullo;
-        // }
-
         let matches = this._heroes.filter(hero => {
             return hero.name === name;
         });

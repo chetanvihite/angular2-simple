@@ -46,7 +46,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
                     }
                     // // if getAll in progress or completed (indicated by existence of promise)
                     if (this._heroes.ready) {
-                        return this._heroes; //.ready
+                        return this._heroes;
                     }
                     // clear heroes and initiate new fetch, returning its promise
                     this._heroes.fetching = true;
@@ -67,11 +67,11 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
                         console.log("getAllHeroes failed w/ message:\"" + err + "\"");
                         return Promise.reject(err);
                     });
-                    return this._heroes; //.ready;
+                    return this._heroes;
                 };
                 HeroDataService.prototype.getOrCreateHero = function (name) {
                     var _this = this;
-                    var hero; // = Hero.nullo;
+                    var hero;
                     if (this._heroes.fetched) {
                         hero = this._getOrCreateHeroFromCache(name);
                     }
@@ -83,9 +83,6 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
                     return hero;
                 };
                 HeroDataService.prototype._getOrCreateHeroFromCache = function (name) {
-                    // if (!name) {
-                    //     return Hero.nullo;
-                    // }
                     var matches = this._heroes.filter(function (hero) {
                         return hero.name === name;
                     });

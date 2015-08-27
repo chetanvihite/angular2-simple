@@ -7,7 +7,6 @@ const initialHeroName = 'Igor';
 
 @Component({
     selector: 'hero'
-    //, viewBindings: diBinding // component DI registration
 })
 @View({
     templateUrl: 'hero.html',

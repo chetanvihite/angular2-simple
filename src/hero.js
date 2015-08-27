@@ -18,7 +18,6 @@ System.register([], function(exports_1) {
                     configurable: true
                 });
                 Object.defineProperty(Hero.prototype, "name", {
-                    // get isNullo() { return this._id === 0; }
                     get: function () { return this._name; },
                     set: function (value) { this._name = value; },
                     enumerable: true,
@@ -30,5 +29,4 @@ System.register([], function(exports_1) {
         }
     }
 });
-// var nullo = new Hero('Noman', 0);
 //# sourceMappingURL=hero.js.map
